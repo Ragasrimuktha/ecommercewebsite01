@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadProducts()">
+
+<h2>All Products</h2>
+
+<!-- 🔍 Search Bar -->
+<input type="text" id="searchBar" placeholder="Search products..." onkeyup="searchProducts()">
+<nav>
+    <a href="cart.html" class="nav-link">Cart 🛒</a>
+    <a href="wishlist.html" class="nav-link">Wishlist ❤️</a>
+    <a href="orders.html" class="nav-link">Orders 📦</a>
+    <div style="margin: 15px;">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('electronics')">Electronics</button>
+    <button onclick="filterCategory('makeup')">Makeup</button>
+    <button onclick="filterCategory('dress')">Dress</button>
+    <button onclick="filterCategory('footwear')">Footwear</button>
+</div>
+
+</nav>
+<div id="products" class="product-container"></div>
+<nav>
+</nav>
+<button onclick="logout()">Logout</button>
+</nav>
+<div id="products"></div>
+<nav>
+<!-- 🧭 Category Buttons -->
+
+<!-- 🛒 Products -->
+<div id="products" class="product-container"></div>
+
+<br>
+
+
+<script src="script.js"></script>
+</body>
+</html>

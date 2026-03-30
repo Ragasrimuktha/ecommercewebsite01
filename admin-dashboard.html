@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ✅ ONLY ONE BODY + BOTH FUNCTIONS -->
+<body onload="loadAdminProducts(); loadAdminOrders();">
+
+<h2>Admin Dashboard</h2>
+
+<!-- ✅ ADD PRODUCT -->
+<h3>Add Product</h3>
+<input type="text" id="prodName" placeholder="Product Name">
+<input type="number" id="prodPrice" placeholder="Price">
+<input type="text" id="prodImg" placeholder="Image URL">
+<button onclick="addProduct()">Add Product</button>
+
+<!-- ✅ EXISTING PRODUCTS -->
+<h3>Existing Products</h3>
+<div id="adminProducts" class="product-container"></div>
+
+<!-- 🔥 ✅ ADD THIS (YOU MISSED THIS) -->
+<h3>All Orders</h3>
+<div id="adminOrders"></div>
+
+<!-- ✅ LOGOUT -->
+<button onclick="adminLogout()">Logout</button>
+
+<!-- ✅ JS FILE -->
+<script src="script.js"></script>
+
+</body>
+</html>

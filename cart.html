@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadCart()">
+
+<h2>My Cart</h2>
+<button onclick="goToProducts()">← Back to Products</button>
+
+<!-- CART ITEMS -->
+<div id="cart-items" class="cart-container"></div>
+
+<!-- CHECKOUT SECTION -->
+<div id="checkout">
+    <h3>Total: <span id="total">₹0</span></h3>
+    <hr>
+
+    <h3>Delivery Details</h3>
+    <textarea id="address" placeholder="Enter your address" rows="4" cols="50"></textarea>
+
+    <!-- Payment Method -->
+     <h3>Payment Method</h3>
+    <label><input type="radio" name="payment" value="COD" onclick="toggleUPI(false)"> Cash on Delivery</label><br>
+    <label><input type="radio" name="payment" value="UPI" onclick="toggleUPI(true)"> UPI</label>
+
+    <!-- UPI SCANNER (Hidden by default) -->
+    <div id="upiBox" style="display:none; margin-top:15px;">
+    <h4>Scan & Pay</h4>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=fake@upi&pn=Shop&am=100"
+         alt="UPI QR Code">
+    <p>Scan this QR using any UPI app</p>
+    <!-- PAYMENT SUCCESS POPUP -->
+    <div id="paymentSuccess" style="display:none;">
+    <div class="success-box">
+        <div class="tick">✔</div>
+        <h2>Payment Successful</h2>
+        <p>Your order has been placed</p>
+    </div>
+    </div> 
+
+</div>
+
+    <br><br>
+    <button onclick="placeOrder()">Place Order</button>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
